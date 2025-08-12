@@ -6,15 +6,14 @@
 }
 
 body {
-  background-color: #f8f9fa; /* tom claro e neutro */
+  background-color: #f8f9fa;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #212529; /* texto escuro para boa leitura */
+  color: #212529;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 /* CONTAINER DO JOGO */
@@ -33,7 +32,7 @@ h3,
 h4 {
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1a1a1a; /* preto suave */
+  color: #1a1a1a;
   line-height: 1.2;
 }
 
@@ -45,10 +44,9 @@ h4 {
   border-radius: 20px;
   background-color: #4a90e2;
   color: white;
-  user-select: none;
 }
 
-/* CABEÇALHO - RODADA E PERGUNTAS RESTANTES */
+/* CABEÇALHO */
 .d-flex.justify-content-between {
   display: flex;
   justify-content: space-between;
@@ -65,12 +63,10 @@ h4 {
   border-radius: 10px;
   padding: 2.5rem 2rem;
   box-shadow: 0 8px 16px rgba(59, 116, 209, 0.5);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  user-select: none;
+  transition: all 0.3s ease;
 }
 
-.question-card:hover,
-.question-card:focus-within {
+.question-card:hover {
   box-shadow: 0 12px 28px rgba(59, 116, 209, 0.75);
   transform: translateY(-4px);
 }
@@ -89,59 +85,44 @@ h4 {
   font-weight: 700;
   font-size: 1.1rem;
   border: 2.5px solid #2e62c7;
-  background-color: #f8f9fa; /* fundo claro */
-  color: #212529; /* texto escuro */
+  background-color: #f8f9fa;
+  color: #212529;
   border-radius: 10px;
   margin-bottom: 1rem;
-  cursor: pointer;
   transition: all 0.3s ease;
-  user-select: none;
-  box-shadow: inset 0 0 0 0 transparent;
 }
 
-.option-btn:hover,
-.option-btn:focus-visible {
-  background-color: #dbe9ff; /* azul claro no hover */
-  color: #204a9a; /* azul escuro no texto */
+.option-btn:hover {
+  background-color: #dbe9ff;
+  color: #204a9a;
   border-color: #204a9a;
   box-shadow: 0 0 14px rgba(32, 74, 154, 0.5);
-  outline: none;
   transform: translateX(4px);
 }
 
-/* Estado resposta correta */
 .option-btn.correct {
-  background-color: #4caf50; /* verde */
+  background-color: #4caf50;
   color: white;
   border-color: #3a8d40;
   box-shadow: 0 0 12px #4caf50aa;
-  cursor: default;
-  pointer-events: none;
-  transform: none;
 }
 
-/* Estado resposta incorreta */
 .option-btn.incorrect {
-  background-color: #f44336; /* vermelho */
+  background-color: #f44336;
   color: white;
   border-color: #aa2e25;
   box-shadow: 0 0 12px #f44336aa;
-  cursor: default;
-  pointer-events: none;
-  transform: none;
 }
 
 /* ÁREA DAS EQUIPES */
 .team-card {
   background-color: #fff;
-  border-left: 6px solid #4a90e2; /* default blue, inline styles podem sobrescrever */
+  border-left: 6px solid #4a90e2;
   border-radius: 10px;
-  padding: 1.25rem 1.5rem 1.75rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   margin-bottom: 1.8rem;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
+  transition: all 0.3s ease;
 }
 
 .team-card:hover {
@@ -149,62 +130,86 @@ h4 {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
 }
 
-/* ALERTA DE PENALIDADE */
-.penalty-alert {
-  position: relative;
-  margin-bottom: 1.2rem;
-  background-color: #b22222; /* vermelho vibrante */
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.7rem 1.3rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(178, 34, 34, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
-  user-select: none;
-  letter-spacing: 0.02em;
-  transition: transform 0.3s ease;
-  z-index: 2;
+/* ESTILOS PARA PENALIDADES */
+.penalty-box {
+  background: linear-gradient(135deg, #ff4d4d 0%, #b22222 100%);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
+  border-left: 4px solid #ff8a8a;
+  animation: pulse 2s infinite;
 }
 
-.penalty-alert i {
-  font-size: 1.6rem;
+.penalty-box strong,
+.penalty-box i {
   color: #ffdada;
 }
 
-/* BÔNUS GLOBAL */
-.bonus-alert {
-  background-color: #4cae4c;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0.85rem 1.3rem;
-  border-radius: 12px;
+.penalty-box i {
+  margin-right: 0.5rem;
+}
+
+/* ESTILOS PARA BÔNUS */
+.bonus-box {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
   margin-top: 1.5rem;
-  box-shadow: 0 6px 18px rgba(76, 174, 76, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  user-select: none;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
+  border-left: 4px solid #a5d6a7;
+  animation: float 3s ease-in-out infinite;
 }
 
-.bonus-alert i {
-  font-size: 1.6rem;
+.bonus-box strong,
+.bonus-box i {
+  color: #e8f5e9;
 }
 
-/* BARRA DE PROGRESSO DA EQUIPE ATUAL */
+.bonus-box i {
+  margin-right: 0.5rem;
+}
+
+/* BOTÕES ESPECIAIS */
+.btn-success.btn-sm {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-success.btn-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.6);
+}
+
+.btn-danger.btn-sm {
+  background: linear-gradient(135deg, #ff4d4d 0%, #b22222 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(178, 34, 34, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-danger.btn-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(178, 34, 34, 0.6);
+}
+
+/* DESTAQUE PARA EQUIPE ATUAL */
+.current-team {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+  animation: highlight 2s infinite;
+}
+
+/* BARRA DE PROGRESSO */
 .progress {
   height: 14px;
   border-radius: 12px;
   background-color: #e0e0e0;
   margin-top: 1.3rem;
   overflow: hidden;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar {
@@ -222,10 +227,79 @@ h4 {
     transparent
   );
   background-size: 1.2rem 1.2rem;
-  transition: width 0.4s ease;
 }
 
-/* Animação barra progresso */
+/* FORMULÁRIOS */
+.input-group-sm > .form-control {
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+  border: 1.5px solid #ced4da;
+  transition: all 0.25s ease;
+}
+
+.input-group-sm > .form-control:focus {
+  border-color: #2e62c7;
+  box-shadow: 0 0 12px rgba(46, 98, 199, 0.5);
+}
+
+.input-group-sm > .btn-outline-secondary {
+  border-radius: 0 0.3rem 0.3rem 0;
+  padding: 0.45rem 1rem;
+  border: 1.5px solid #ced4da;
+  transition: all 0.25s ease;
+}
+
+.input-group-sm > .btn-outline-secondary:hover {
+  background-color: #2e62c7;
+  color: white;
+  border-color: #204a9a;
+  box-shadow: 0 0 14px rgba(46, 98, 199, 0.75);
+}
+
+/* MEMBROS DA EQUIPE */
+.team-card small {
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.6rem;
+  max-height: 5rem;
+  overflow-y: auto;
+  line-height: 1.3;
+}
+
+/* ANIMAÇÕES */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(178, 34, 34, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(178, 34, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(178, 34, 34, 0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes highlight {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(74, 144, 226, 0.3);
+  }
+}
+
 @keyframes progress-bar-stripes {
   0% {
     background-position: 1.2rem 0;
@@ -235,70 +309,19 @@ h4 {
   }
 }
 
-/* FORMULÁRIO DE AJUSTE DE PONTOS */
-.input-group-sm > .form-control {
-  padding: 0.5rem 0.7rem;
-  font-size: 1rem;
-  border-radius: 0.3rem 0 0 0.3rem;
-  border: 1.5px solid #ced4da;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.input-group-sm > .form-control:focus {
-  border-color: #2e62c7;
-  box-shadow: 0 0 12px rgba(46, 98, 199, 0.5);
-  outline: none;
-}
-
-.input-group-sm > .btn-outline-secondary {
-  border-radius: 0 0.3rem 0.3rem 0;
-  padding: 0.45rem 1rem;
-  font-size: 1rem;
-  border: 1.5px solid #ced4da;
-  color: #495057;
-  background-color: white;
-  transition: background-color 0.25s ease, color 0.25s ease,
-    box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.input-group-sm > .btn-outline-secondary:hover,
-.input-group-sm > .btn-outline-secondary:focus {
-  background-color: #2e62c7;
-  color: white;
-  border-color: #204a9a;
-  box-shadow: 0 0 14px rgba(46, 98, 199, 0.75);
-  outline: none;
-}
-
-/* MEMBROS DA EQUIPE */
-.team-card small {
-  font-size: 0.9rem;
-  color: #212529; /* texto preto escuro */
-  display: block;
-  margin-top: 0.6rem;
-  max-height: 5rem;
-  overflow-y: auto;
-  user-select: none;
-  line-height: 1.3;
-}
-
 /* RESPONSIVIDADE */
 @media (max-width: 991.98px) {
   .game-container {
     padding: 1.5rem 1rem;
     margin: 1rem auto;
   }
-
   .question-card {
     padding: 1.5rem 1.2rem;
   }
-
   .option-btn {
     font-size: 1rem;
     padding: 0.65rem 1.2rem;
   }
-
   .team-card {
     padding: 1rem 1.2rem;
   }
@@ -306,15 +329,67 @@ h4 {
 
 @media (max-width: 575.98px) {
   .game-container {
-    padding: 1rem 1rem;
+    padding: 1rem;
   }
-
   .question-card h3 {
     font-size: 1.4rem;
   }
-
   .option-btn {
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
   }
+}
+
+/* Novos estilos para tarefas completas */
+.task-completed {
+  opacity: 0.6;
+  position: relative;
+}
+
+.task-completed::after {
+  content: "✓ CONCLUÍDO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+  z-index: 10;
+}
+
+.penalty-box,
+.bonus-box {
+  transition: all 0.3s ease;
+  position: relative;
+}
+.penalty {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+}
+.dificil-badge {
+  background: #ff4d4d;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  animation: blink 1s infinite;
 }
