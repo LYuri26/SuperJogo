@@ -8,25 +8,13 @@ require_once 'config/functions.php';
 
 $pdo = getDBConnection();
 
-// Verifica se o jogo foi iniciado
+// ================== Verifica se o jogo foi iniciado ==================
 if (!isset($_SESSION['jogo'])) {
     header('Location: index.php');
     exit();
 }
 
-// Função para sortear a próxima equipe a responder
-function sortearEquipe(array $equipes, int $ultimaEquipe = null): int
-{
-    if ($ultimaEquipe === null) {
-        return $equipes[array_rand($equipes)];
-    }
-    do {
-        $sorteada = $equipes[array_rand($equipes)];
-    } while ($sorteada === $ultimaEquipe && count($equipes) > 1);
-    return $sorteada;
-}
-
-// Valida equipes válidas na sessão
+// ================== Valida equipes válidas ==================
 if (!isset($_SESSION['jogo']['equipes']) || !is_array($_SESSION['jogo']['equipes']) || count($_SESSION['jogo']['equipes']) === 0) {
     die("Nenhuma equipe registrada para o jogo.");
 }
@@ -40,12 +28,14 @@ foreach ($_SESSION['jogo']['equipes'] as $idEquipe) {
         }
     }
 }
+
 if (empty($equipesValidas)) {
     die("Nenhuma equipe válida encontrada para o jogo.");
 }
+
 $_SESSION['jogo']['equipes'] = $equipesValidas;
 
-// Sorteia equipe atual se inexistente ou inválida
+// ================== Define equipe atual ==================
 if (!isset($_SESSION['jogo']['equipe_atual']) || !in_array($_SESSION['jogo']['equipe_atual'], $_SESSION['jogo']['equipes'])) {
     $_SESSION['jogo']['equipe_atual'] = sortearEquipe($_SESSION['jogo']['equipes']);
 }
@@ -56,10 +46,15 @@ if (empty($equipeAtual['membros'])) {
     die("Equipe selecionada (ID: $equipeAtualId) não tem membros para responder.");
 }
 
-// Sorteia membro da equipe atual para responder
+// ================== Sorteia membro da equipe ==================
 $membroSorteado = $equipeAtual['membros'][array_rand($equipeAtual['membros'])];
 
-// Processa envio do formulário
+// ================== Inicializa perguntas usadas ==================
+if (!isset($_SESSION['jogo']['perguntas_usadas'])) {
+    $_SESSION['jogo']['perguntas_usadas'] = [];
+}
+
+// ================== Processa POST ==================
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['resposta'])) {
         $resposta = $_POST['resposta'];
@@ -153,15 +148,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Busca pergunta aleatória para exibir
-$pergunta = getPerguntaAleatoria();
+// ================== Sorteia pergunta aleatória ==================
+$pergunta = getPerguntaAleatoriaPonderada($_SESSION['jogo']['perguntas_usadas']);
+$_SESSION['jogo']['perguntas_usadas'][] = $pergunta['id'];
 
-// Busca dados das equipes para exibir na tela
+// ================== Busca dados das equipes ==================
 $equipes = [];
 foreach ($_SESSION['jogo']['equipes'] as $id) {
     $equipes[] = getEquipeComMembros($id);
 }
 
+// ================== Função de cor ==================
 function getTeamColor($id)
 {
     $colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#d35400'];

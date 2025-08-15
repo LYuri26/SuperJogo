@@ -68,11 +68,37 @@ function getPerguntaById($id)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function getPerguntaAleatoria()
+function getPerguntaAleatoriaPonderada(array $jaUsadas = []): array
 {
-    global $pdo;
-    $stmt = $pdo->query("SELECT * FROM perguntas ORDER BY RAND() LIMIT 1");
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    $todas = getTodasPerguntas();
+
+    // Filtra as já usadas
+    $todas = array_filter($todas, function ($p) use ($jaUsadas) {
+        return !in_array($p['id'], $jaUsadas);
+    });
+
+    if (empty($todas)) {
+        return []; // acabou as perguntas
+    }
+
+    // Pesos — ajuste conforme desejar
+    $pesos = [
+        'fácil' => 1,
+        'médio' => 2,
+        'difícil' => 3
+    ];
+
+    $pool = [];
+    foreach ($todas as $p) {
+        // Add null check for 'nivel' key
+        $nivel = isset($p['nivel']) ? strtolower($p['nivel']) : 'fácil';
+        $peso = $pesos[$nivel] ?? 1; // Default weight if nivel not in pesos
+        for ($i = 0; $i < $peso; $i++) {
+            $pool[] = $p;
+        }
+    }
+
+    return $pool[array_rand($pool)];
 }
 
 // ========================= PRENDAS =========================
@@ -88,6 +114,17 @@ function getPrendaAleatoria($tipo = null)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+// ========================= EQUIPES =========================
+function sortearEquipe(array $equipes): int
+{
+    if (!isset($_SESSION['jogo']['fila_equipes']) || empty($_SESSION['jogo']['fila_equipes'])) {
+        $_SESSION['jogo']['fila_equipes'] = $equipes;
+        shuffle($_SESSION['jogo']['fila_equipes']);
+    }
+    return array_shift($_SESSION['jogo']['fila_equipes']);
+}
+
+
 // ========================= RESPOSTAS E PONTUAÇÃO =========================
 // Ajustada para usar tabela rodadas
 function registrarResposta($idEquipe, $idPergunta, $idMembro, $resposta, $acertou)
@@ -102,4 +139,11 @@ function atualizarPontuacao($idEquipe, $pontos)
     global $pdo;
     $stmt = $pdo->prepare("UPDATE equipes SET pontos = pontos + ? WHERE id = ?");
     return $stmt->execute([$pontos, $idEquipe]);
+}
+
+function getTodasPerguntas()
+{
+    global $pdo;
+    $stmt = $pdo->query("SELECT * FROM perguntas");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

@@ -1,571 +1,403 @@
 USE superjogo;
 
--- Penalidades (50)
+-- PRENDAS CRIATIVAS (PENALIDADES)
 INSERT INTO
     prendas (descricao, tipo)
 VALUES
     (
-        'Cantar o hino nacional em voz alta',
-        'penalidade'
-    ),
-    ('Dançar por 1 minuto sem música', 'penalidade'),
-    ('Fazer 10 flexões', 'penalidade'),
-    ('Contar uma piada para todos', 'penalidade'),
-    (
-        'Imitar um animal escolhido pelos outros times',
+        'Faça uma cena dramática sobre perder um lápis',
         'penalidade'
     ),
     (
-        'Beber um copo de água sem usar as mãos',
+        'Encene um comercial ridículo para um produto inventado',
         'penalidade'
     ),
     (
-        'Fazer uma careta engraçada e manter por 10 segundos',
+        'Dramatize como seria um dia na vida de um alienígena',
         'penalidade'
     ),
     (
-        'Andar de costas até o final da sala',
+        'Faça uma entrevista engraçada com um objeto da sala',
         'penalidade'
     ),
     (
-        'Falar um trava-línguas sem errar 3 vezes seguidas',
-        'penalidade'
-    ),
-    ('Fazer uma imitação de um famoso', 'penalidade'),
-    (
-        'Recitar o alfabeto de trás para frente',
+        'Encene uma cena de novela com dramaticidade exagerada',
         'penalidade'
     ),
     (
-        'Equilibrar um livro na cabeça por 30 segundos',
+        'Crie e apresente um telejornal absurdo',
         'penalidade'
     ),
     (
-        'Fazer um discurso de 1 minuto sobre um tema aleatório',
+        'Faça uma dublagem exagerada para um trecho de filme mudo',
         'penalidade'
     ),
     (
-        'Fingir ser uma estátua por 1 minuto',
-        'penalidade'
-    ),
-    ('Escrever seu nome no ar com o pé', 'penalidade'),
-    ('Cantar uma música infantil', 'penalidade'),
-    (
-        'Fazer um desenho com os olhos vendados',
+        'Encene um reality show com participantes imaginários',
         'penalidade'
     ),
     (
-        'Dizer 5 qualidades suas em 10 segundos',
-        'penalidade'
-    ),
-    ('Fazer um mini show de mágica', 'penalidade'),
-    (
-        'Contar uma história engraçada que aconteceu com você',
+        'Faça um tutorial exagerado de algo simples (como respirar)',
         'penalidade'
     ),
     (
-        'Fazer uma declaração de amor para uma cadeira',
-        'penalidade'
-    ),
-    ('Imitar um professor da escola', 'penalidade'),
-    (
-        'Fazer um rap improvisado sobre o jogo',
+        'Dramatize uma cena de filme de terror com algo banal',
         'penalidade'
     ),
     (
-        'Andar como um pinguim até o final da sala',
+        'Encene um talk show com dois personagens diferentes',
         'penalidade'
     ),
     (
-        'Falar por 1 minuto sem usar a letra "A"',
+        'Faça uma aula exagerada sobre um tema totalmente inútil',
         'penalidade'
     ),
     (
-        'Fazer uma pose de super-herói e manter por 15 segundos',
+        'Dramatize uma cena de filme de ação com objetos da mesa',
         'penalidade'
     ),
     (
-        'Cantar uma música em velocidade 2x',
+        'Encene um jogo de futebol narrado como ópera',
         'penalidade'
     ),
     (
-        'Fazer um comercial criativo de um objeto aleatório',
-        'penalidade'
-    ),
-    ('Falar como um robô por 2 minutos', 'penalidade'),
-    (
-        'Fazer uma dramatização de uma cena de novela',
-        'penalidade'
-    ),
-    ('Contar de 1 a 20 em outro idioma', 'penalidade'),
-    (
-        'Fazer um vozinha de personagem de desenho',
-        'penalidade'
-    ),
-    ('Recitar um poema improvisado', 'penalidade'),
-    (
-        'Fazer uma dublagem engraçada de um vídeo mudo',
+        'Faça um documentário sério sobre a vida dos clips de papel',
         'penalidade'
     ),
     (
-        'Fingir ser um apresentador de TV por 1 minuto',
+        'Encene um desfile de moda com roupas imaginárias',
         'penalidade'
     ),
     (
-        'Fazer um passo de dança inventado na hora',
+        'Dramatize um debate político entre dois alimentos',
         'penalidade'
     ),
     (
-        'Descrever um objeto sem dizer seu nome ou função',
+        'Faça uma audição para um filme interpretando emoções opostas',
         'penalidade'
     ),
     (
-        'Fazer uma entrevista imaginária com um objeto',
+        'Encene um serviço meteorológico para um planeta imaginário',
         'penalidade'
     ),
     (
-        'Falar 3 mentiras e 1 verdade sobre você',
+        'Dramatize um tutorial de dança para pessoas com três pernas',
         'penalidade'
     ),
     (
-        'Fazer um barulho de animal escolhido pelos outros',
+        'Faça um comercial de "ar enlatado" com argumentos convincentes',
         'penalidade'
     ),
     (
-        'Cantar uma música só com a letra "lá"',
+        'Encene um julgamento onde o réu é uma meia perdida',
         'penalidade'
     ),
     (
-        'Fazer um discurso motivacional para uma cenoura',
+        'Dramatize uma cena romântica entre dois móveis',
         'penalidade'
     ),
     (
-        'Fingir ser um comentarista esportivo de um evento bobo',
+        'Faça um programa de culinária com ingredientes absurdos',
         'penalidade'
     ),
     (
-        'Fazer uma maquiagem criativa com caneta',
+        'Encene um trailer dramático para um filme sobre secar tinta',
         'penalidade'
     ),
     (
-        'Criar um slogan para o time adversário',
+        'Dramatize uma competição esportiva entre partes do corpo',
         'penalidade'
     ),
     (
-        'Fazer um mini curso de algo que não sabe',
+        'Faça uma demonstração de produto com defeitos hilários',
         'penalidade'
     ),
     (
-        'Descrever como seria um dia na vida de uma formiga',
+        'Encene um reality show de sobrevivência num escritório',
         'penalidade'
     ),
     (
-        'Fazer um telejornal sobre coisas da sala',
+        'Dramatize um tutorial de maquiagem usando apenas canetas',
         'penalidade'
     ),
-    ('Cantar parabéns para você mesmo', 'penalidade'),
     (
-        'Fazer um comercial de um produto inexistente',
+        'Faça um programa de entrevistas com seu personagem favorito',
+        'penalidade'
+    ),
+    (
+        'Encene um comercial de "curso para virar estátua"',
+        'penalidade'
+    ),
+    (
+        'Dramatize um conflito épico entre o verão e o inverno',
+        'penalidade'
+    ),
+    (
+        'Faça uma aula de "como ser normal" com exemplos absurdos',
+        'penalidade'
+    ),
+    (
+        'Encene um documentário sobre a migração das cadeiras',
+        'penalidade'
+    ),
+    (
+        'Dramatize um talk show onde o apresentador é seu alter ego',
+        'penalidade'
+    ),
+    (
+        'Faça um programa de reforma para objetos pessoais',
+        'penalidade'
+    ),
+    (
+        'Encene um comercial de "seguro contra situações embaraçosas"',
+        'penalidade'
+    ),
+    (
+        'Dramatize um reality de transformação para objetos',
+        'penalidade'
+    ),
+    (
+        'Faça um programa de conselhos dado por um personagem aleatório',
+        'penalidade'
+    ),
+    (
+        'Encene um jogo de videogame usando apenas gestos',
+        'penalidade'
+    ),
+    (
+        'Dramatize um comercial político para se eleger "rei da sala"',
+        'penalidade'
+    ),
+    (
+        'Faça um programa de "coisas que você nunca quis saber"',
+        'penalidade'
+    ),
+    (
+        'Encene um serviço de atendimento ao cliente para problemas imaginários',
+        'penalidade'
+    ),
+    (
+        'Dramatize um making-of de um filme que nunca existiu',
+        'penalidade'
+    ),
+    (
+        'Faça um comercial de "desodorante para pés de mesa"',
+        'penalidade'
+    ),
+    (
+        'Encene um programa de auditório com plateia imaginária',
+        'penalidade'
+    ),
+    (
+        'Dramatize um tutorial de "como falar sem dizer nada"',
+        'penalidade'
+    ),
+    (
+        'Faça um reality show de "sobrevivência numa festa chata"',
+        'penalidade'
+    ),
+    (
+        'Encene um comercial de "curso intensivo para ser árvore"',
         'penalidade'
     );
 
--- Bônus (50)
+-- BÔNUS CRIATIVOS
 INSERT INTO
     prendas (descricao, tipo)
 VALUES
-    ('Escolher a próxima equipe a responder', 'bonus'),
-    ('Ganhar 1 ponto extra', 'bonus'),
-    ('Pular uma pergunta difícil', 'bonus'),
     (
-        'Escolher a próxima prenda para outro time',
-        'bonus'
-    ),
-    ('Trocar uma pergunta já vista', 'bonus'),
-    (
-        'Duplicar pontos na próxima resposta certa',
-        'bonus'
-    ),
-    ('Escolher o tema da próxima pergunta', 'bonus'),
-    (
-        'Ganhar o direito de dar uma prenda a outro time',
+        'Escolha alguém para fazer uma prenda no seu lugar',
         'bonus'
     ),
     (
-        'Anular uma prenda recebida anteriormente',
+        'Transforme a próxima prenda em show de talentos',
         'bonus'
     ),
     (
-        'Escolher dois membros do próximo time para responder',
-        'bonus'
-    ),
-    ('Receber uma dica na próxima pergunta', 'bonus'),
-    (
-        'Converter uma resposta errada em certa',
+        'Ganhe o direito de dirigir uma cena com dois colegas',
         'bonus'
     ),
     (
-        'Escolher quem vai responder no próximo time',
+        'Escolha o tema da próxima dramatização',
         'bonus'
     ),
     (
-        'Ganhar imunidade contra prendas por 2 rodadas',
-        'bonus'
-    ),
-    ('Roubar 1 ponto de outro time', 'bonus'),
-    (
-        'Escolher a dificuldade da próxima pergunta',
+        'Transforme uma resposta errada em desafio criativo',
         'bonus'
     ),
     (
-        'Ter direito a 2 respostas na próxima pergunta',
+        'Ganhe o direito de escolher o próximo ator',
         'bonus'
     ),
     (
-        'Cancelar a próxima prenda que receberia',
+        'Convide alguém para uma improvisação conjunta',
         'bonus'
     ),
     (
-        'Ganhar o direito de ver a resposta antes de responder',
-        'bonus'
-    ),
-    ('Transformar uma prenda em bônus', 'bonus'),
-    (
-        'Escolher um membro de outro time para fazer uma prenda',
+        'Transforme a próxima pergunta em cena improvisada',
         'bonus'
     ),
     (
-        'Ganhar um coringa para usar quando quiser',
+        'Ganhe o direito de dar uma direção artística',
         'bonus'
     ),
     (
-        'Converter uma resposta errada em prenda para outro time',
+        'Escolha o gênero da próxima apresentação (terror, comédia etc)',
         'bonus'
     ),
     (
-        'Escolher a ordem de resposta dos times',
+        'Ganhe um "coringa de personagem" para usar quando quiser',
         'bonus'
     ),
     (
-        'Ganhar direito a uma segunda chance em caso de erro',
-        'bonus'
-    ),
-    ('Fazer uma pergunta para outro time', 'bonus'),
-    (
-        'Escolher um tema que não vai cair nas perguntas',
+        'Transforme uma prenda em espetáculo para todos participarem',
         'bonus'
     ),
     (
-        'Ganhar 50% de desconto na próxima penalidade',
+        'Escolha dois colegas para fazerem uma cena juntos',
         'bonus'
     ),
     (
-        'Transformar uma penalidade em show de talentos',
+        'Ganhe o direito de criar uma regra criativa temporária',
         'bonus'
     ),
     (
-        'Escolher a próxima música de fundo do jogo',
+        'Transforme uma resposta certa em performance artística',
         'bonus'
     ),
     (
-        'Ganhar direito de veto em uma pergunta',
+        'Escolha o figurino imaginário para a próxima apresentação',
         'bonus'
     ),
     (
-        'Escolher o próximo apresentador do jogo',
+        'Ganhe o papel de diretor na próxima dramatização',
         'bonus'
     ),
     (
-        'Ganhar um ponto bônus para dividir como quiser',
+        'Transforme uma pergunta em cena de teatro de 1 minuto',
         'bonus'
     ),
     (
-        'Ter direito a consultar um membro do time na próxima resposta',
+        'Escolha o cenário imaginário para a próxima performance',
         'bonus'
     ),
     (
-        'Escolher o formato da próxima pergunta',
+        'Ganhe o direito de substituir uma prenda por desafio criativo',
         'bonus'
     ),
     (
-        'Ganhar imunidade contra perda de pontos por 1 rodada',
+        'Transforme uma rodada em competição de improvisação',
         'bonus'
     ),
     (
-        'Converter uma prenda em desafio para outro time',
+        'Escolha o tema musical para a próxima apresentação',
         'bonus'
     ),
     (
-        'Escolher quem aplica as prendas na próxima rodada',
+        'Ganhe o papel de protagonista na próxima dramatização',
         'bonus'
     ),
     (
-        'Ganhar direito de inverter uma resposta certa/errada',
+        'Transforme uma resposta em esquetes com sua equipe',
         'bonus'
     ),
     (
-        'Escolher o próximo critério de pontuação',
+        'Escolha um objeto que deve ser incluído na próxima cena',
         'bonus'
     ),
     (
-        'Ganhar um "salve-se quem puder" para usar quando quiser',
+        'Ganhe o direito de narrar a próxima performance',
         'bonus'
     ),
     (
-        'Transformar uma pergunta difícil em fácil',
+        'Transforme uma prenda em desafio de dublagem criativa',
         'bonus'
     ),
     (
-        'Escolher o próximo tema musical do jogo',
+        'Escolha dois estilos que devem ser misturados na próxima cena',
         'bonus'
     ),
     (
-        'Ganhar o direito de "roubar" uma prenda de outro time',
+        'Ganhe o direito de criar um personagem para outro jogador',
         'bonus'
     ),
     (
-        'Converter uma resposta certa em dobro de pontos',
+        'Transforme uma rodada em festival de mini-peças',
         'bonus'
     ),
     (
-        'Escolher o próximo modo de resposta (escrita, mímica, etc)',
+        'Escolha o clima emocional da próxima apresentação',
         'bonus'
     ),
     (
-        'Ganhar um "passe livre" para qualquer prenda futura',
-        'bonus'
-    ),
-    ('Escolher o próximo juiz das respostas', 'bonus'),
-    (
-        'Ganhar direito a uma "dica de ouro" na próxima pergunta',
+        'Ganhe o papel de vilão na próxima dramatização',
         'bonus'
     ),
     (
-        'Transformar a próxima penalidade em bônus para seu time',
+        'Transforme uma resposta em cena de filme mudou exagerado',
+        'bonus'
+    ),
+    (
+        'Escolha um acontecimento histórico para ser recriado',
+        'bonus'
+    ),
+    (
+        'Ganhe o direito de criar um diálogo absurdo',
+        'bonus'
+    ),
+    (
+        'Transforme uma prenda em competição de comerciais criativos',
+        'bonus'
+    ),
+    (
+        'Escolha um idioma imaginário para a próxima cena',
+        'bonus'
+    ),
+    (
+        'Ganhe o papel de coadjuvante engraçado na próxima cena',
+        'bonus'
+    ),
+    (
+        'Transforme uma rodada em noite de premiação imaginária',
+        'bonus'
+    ),
+    (
+        'Escolha um gênero musical para a próxima dramatização',
+        'bonus'
+    ),
+    (
+        'Ganhe o direito de criar um final alternativo para uma cena',
+        'bonus'
+    ),
+    (
+        'Transforme uma resposta em abertura de novela',
+        'bonus'
+    ),
+    (
+        'Escolha três palavras que devem aparecer na próxima performance',
+        'bonus'
+    ),
+    (
+        'Ganhe o papel de herói improvável na próxima cena',
+        'bonus'
+    ),
+    (
+        'Transforme uma prenda em festival de curtas teatrais',
+        'bonus'
+    ),
+    (
+        'Escolha um superpoder ridículo para demonstrar',
+        'bonus'
+    ),
+    (
+        'Ganhe o direito de criar um plot twist na próxima cena',
+        'bonus'
+    ),
+    (
+        'Transforme uma rodada em aula de interpretação exagerada',
+        'bonus'
+    ),
+    (
+        'Escolha um sotaque para a próxima dramatização',
         'bonus'
     );
-
-INSERT INTO
-    prendas (descricao, tipo)
-VALUES
-    -- Bônus
-    ('Ganhe 5 pontos extras', 'bonus'),
-    ('Avance uma rodada sem responder', 'bonus'),
-    (
-        'Receba ajuda de um colega na próxima pergunta',
-        'bonus'
-    ),
-    (
-        'Troque a pergunta por outra mais fácil',
-        'bonus'
-    ),
-    (
-        'Dobre a pontuação da próxima resposta correta',
-        'bonus'
-    ),
-    (
-        'Escolha a equipe adversária para perder a vez',
-        'bonus'
-    ),
-    ('Receba dica extra na próxima questão', 'bonus'),
-    ('Ganhe 10 pontos imediatos', 'bonus'),
-    ('Responda novamente se errar', 'bonus'),
-    (
-        'Escolha a próxima pergunta do adversário',
-        'bonus'
-    ),
-    (
-        'Proteção contra penalidade na próxima rodada',
-        'bonus'
-    ),
-    ('Ganhe 3 pontos imediatos', 'bonus'),
-    ('Troque de pergunta com outra equipe', 'bonus'),
-    (
-        'Gire novamente e ganhe prêmio cumulativo',
-        'bonus'
-    ),
-    ('Use duas respostas na mesma pergunta', 'bonus'),
-    ('Anule a última penalidade recebida', 'bonus'),
-    ('Ganhe o dobro de pontos nesta rodada', 'bonus'),
-    (
-        'Obtenha carta de “passe livre” para penalidade',
-        'bonus'
-    ),
-    ('Conquiste mais 7 pontos', 'bonus'),
-    (
-        'Escolha entre três perguntas para responder',
-        'bonus'
-    ),
-    ('Ganhe 1 ponto extra', 'bonus'),
-    ('Ganhe 2 pontos extras', 'bonus'),
-    ('Ganhe 4 pontos extras', 'bonus'),
-    ('Ganhe 6 pontos extras', 'bonus'),
-    ('Ganhe 8 pontos extras', 'bonus'),
-    ('Ganhe 9 pontos extras', 'bonus'),
-    ('Ganhe 12 pontos extras', 'bonus'),
-    ('Ganhe 15 pontos extras', 'bonus'),
-    ('Ganhe 20 pontos extras', 'bonus'),
-    (
-        'Troque a vez com um jogador à sua escolha',
-        'bonus'
-    ),
-    (
-        'Ganhe proteção de 2 rodadas contra penalidades',
-        'bonus'
-    ),
-    (
-        'Troque a sua pergunta por uma de nível fácil',
-        'bonus'
-    ),
-    ('Ganhe mais 5 segundos para responder', 'bonus'),
-    (
-        'Permita que sua equipe escolha quem responde',
-        'bonus'
-    ),
-    (
-        'Ganhe o triplo de pontos se acertar a próxima',
-        'bonus'
-    ),
-    ('Receba uma dica bônus da banca', 'bonus'),
-    (
-        'Ganhe a chance de corrigir sua última resposta',
-        'bonus'
-    ),
-    ('Ganhe 50 pontos instantâneos', 'bonus'),
-    (
-        'Ganhe mais tempo para pensar na próxima pergunta',
-        'bonus'
-    ),
-    (
-        'Escolha o próximo adversário a responder',
-        'bonus'
-    ),
-    (
-        'Ganhe imunidade até sua próxima jogada',
-        'bonus'
-    ),
-    (
-        'Ganhe um “coringa” para usar quando quiser',
-        'bonus'
-    ),
-    ('Troque de lugar com outro jogador', 'bonus'),
-    ('Ganhe pontuação igual ao líder', 'bonus'),
-    (
-        'Ganhe o mesmo número de pontos da última rodada',
-        'bonus'
-    ),
-    (
-        'Multiplique por 2 os pontos da próxima resposta',
-        'bonus'
-    ),
-    ('Ganhe 30 pontos extras', 'bonus'),
-    ('Ganhe a vez de jogar imediatamente', 'bonus'),
-    (
-        'Escolha um adversário para perder pontos',
-        'bonus'
-    ),
-    -- Penalidades
-    ('Perda de 5 pontos', 'penalidade'),
-    ('Pule a próxima rodada', 'penalidade'),
-    (
-        'Dobre a pontuação do adversário na próxima',
-        'penalidade'
-    ),
-    (
-        'Responda uma pergunta difícil obrigatória',
-        'penalidade'
-    ),
-    ('Perda de 10 pontos', 'penalidade'),
-    ('Troque sua vez com um adversário', 'penalidade'),
-    ('Responda sem ajuda de sua equipe', 'penalidade'),
-    ('Perda de 3 pontos', 'penalidade'),
-    ('Perda de 7 pontos', 'penalidade'),
-    ('Perda de 15 pontos', 'penalidade'),
-    (
-        'Passe a vez para a equipe à esquerda',
-        'penalidade'
-    ),
-    (
-        'Passe a vez para a equipe à direita',
-        'penalidade'
-    ),
-    ('Responda em 5 segundos', 'penalidade'),
-    (
-        'Responda sem opções de múltipla escolha',
-        'penalidade'
-    ),
-    ('Perda de 2 pontos', 'penalidade'),
-    ('Perda de 4 pontos', 'penalidade'),
-    ('Perda de 6 pontos', 'penalidade'),
-    ('Perda de 8 pontos', 'penalidade'),
-    ('Perda de 9 pontos', 'penalidade'),
-    ('Perda de 12 pontos', 'penalidade'),
-    (
-        'Responda uma pergunta sobre tema escolhido pelo adversário',
-        'penalidade'
-    ),
-    ('Perca 1 ponto', 'penalidade'),
-    ('Perca 20 pontos', 'penalidade'),
-    (
-        'Troque sua pontuação com o último colocado',
-        'penalidade'
-    ),
-    (
-        'Jogue de olhos vendados (metaforicamente)',
-        'penalidade'
-    ),
-    ('Perda de 50 pontos', 'penalidade'),
-    ('Fique 2 rodadas sem jogar', 'penalidade'),
-    (
-        'Responda uma pergunta de nível difícil',
-        'penalidade'
-    ),
-    ('Responda duas perguntas seguidas', 'penalidade'),
-    (
-        'Se errar, perca o dobro de pontos',
-        'penalidade'
-    ),
-    (
-        'Não pode receber dicas nesta rodada',
-        'penalidade'
-    ),
-    (
-        'Troque sua pergunta por uma mais difícil',
-        'penalidade'
-    ),
-    ('Perda de 25 pontos', 'penalidade'),
-    (
-        'Responda na língua escolhida pelo adversário',
-        'penalidade'
-    ),
-    ('Passe a vez obrigatoriamente', 'penalidade'),
-    ('Adversário escolhe sua pergunta', 'penalidade'),
-    (
-        'Troque de lugar com último colocado',
-        'penalidade'
-    ),
-    ('Perda de 18 pontos', 'penalidade'),
-    (
-        'Perca todos os pontos desta rodada',
-        'penalidade'
-    ),
-    ('Responda sem tempo para pensar', 'penalidade'),
-    (
-        'Responda com metade do tempo normal',
-        'penalidade'
-    ),
-    (
-        'Escolha um aliado para perder pontos',
-        'penalidade'
-    ),
-    (
-        'Perca metade dos seus pontos totais',
-        'penalidade'
-    ),
-    ('Responda uma pergunta relâmpago', 'penalidade'),
-    ('Perda de 40 pontos', 'penalidade'),
-    (
-        'Fique 3 rodadas sem ganhar pontos',
-        'penalidade'
-    ),
-    ('Responda com penalidade de tempo', 'penalidade'),
-    ('Perda de 35 pontos', 'penalidade');
